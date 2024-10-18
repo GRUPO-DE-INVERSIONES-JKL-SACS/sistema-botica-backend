@@ -19,4 +19,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleResourceNotFound(ConfigDataResourceNotFoundException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(DataNotFoundException.class)
+    public ResponseEntity<String> handleDataNotFound(DataNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
 }
